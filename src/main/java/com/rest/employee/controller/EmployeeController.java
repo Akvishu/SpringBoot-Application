@@ -66,7 +66,7 @@ public class EmployeeController {
 	  public ResponseEntity<String> createEmployee(@RequestBody Employee employee) {
 	    try {
 	    	employeeRepository.save(new Employee(employee.getId(),employee.getName(), employee.getDept(), employee.getSalary()));
-	      return new ResponseEntity<>("Employee was added successfully.", HttpStatus.CREATED);
+	      return new ResponseEntity<>("Employee added successfully.", HttpStatus.CREATED);
 	    } catch (Exception e) {
 	      return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 	    }
@@ -84,7 +84,7 @@ public class EmployeeController {
 	      employee1.setSalary(employee.getSalary());
 
 	      employeeRepository.update(employee1);
-	      return new ResponseEntity<>("Employee was updated successfully.", HttpStatus.OK);
+	      return new ResponseEntity<>("Employee updated successfully.", HttpStatus.OK);
 	    } else {
 	      return new ResponseEntity<>("Cannot update employee with id=" + id, HttpStatus.NOT_FOUND);
 	    }
@@ -97,11 +97,11 @@ public class EmployeeController {
 	    try {
 	      int result = employeeRepository.deleteById(id);
 	      if (result == 0) {
-	        return new ResponseEntity<>("Cannot find employee with id=" + id, HttpStatus.OK);
+	        return new ResponseEntity<>("Can not find employee with id=" + id, HttpStatus.OK);
 	      }
-	      return new ResponseEntity<>("Employee Details was deleted successfully.", HttpStatus.OK);
+	      return new ResponseEntity<>("Employee Details deleted successfully.", HttpStatus.OK);
 	    } catch (Exception e) {
-	      return new ResponseEntity<>("Cannot delete employee..", HttpStatus.INTERNAL_SERVER_ERROR);
+	      return new ResponseEntity<>("Can not delete employee..", HttpStatus.INTERNAL_SERVER_ERROR);
 	    }
 	  }
 	 
@@ -112,7 +112,7 @@ public class EmployeeController {
 	      int numRows = employeeRepository.deleteAll();
 	      return new ResponseEntity<>("Deleted " + numRows + " Employee(s) successfully.", HttpStatus.OK);
 	    } catch (Exception e) {
-	      return new ResponseEntity<>("Cannot delete tutorials.", HttpStatus.INTERNAL_SERVER_ERROR);
+	      return new ResponseEntity<>("Can't delete employee.", HttpStatus.INTERNAL_SERVER_ERROR);
 	    }
 
 	  }
