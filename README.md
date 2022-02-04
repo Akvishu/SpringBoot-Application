@@ -10,7 +10,7 @@ Step 2- Open command line and go to project folder, then run below maven command
   
   
 3- Apllication is up please by visiting url : 
-  >> "http://localhost:8080/h2-ui"  to access in memory database call this url And see the login credentials in project "Application.properties" file
+  >> "http://localhost:8080/h2-ui"  to access in memory database call this url And see the login credentials in project "Application.properties" file from "Employee-Rest-API\src\main\resources\application.properties" source.
   
   PostMapping >> "http://localhost:8080/api/employees" Run this url in Postman with Post method to add new employee
   GetMapping >> "http://localhost:8080/api/employees" Run this url in Postman with Get method to see all the employees details
