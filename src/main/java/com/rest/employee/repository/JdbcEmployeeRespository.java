@@ -83,7 +83,7 @@ public class JdbcEmployeeRespository implements EmployeeRepository {
 	@Override
 	public int deleteAll() {
 		// TODO Auto-generated method stub
-		return jdbcTemplate.update("DELETE from employees");
+		return jdbcTemplate.update("DELETE from employees"); //it is not working , checck it again.
 	}
 
 }
